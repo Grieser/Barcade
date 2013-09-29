@@ -1,4 +1,6 @@
 Barcade::Application.routes.draw do
+  resources :scores
+
   resources :players
 
   resources :games
