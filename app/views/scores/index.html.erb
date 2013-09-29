@@ -17,8 +17,8 @@
   <tbody>
     <% @scores.each do |score| %>
       <tr>
-        <td><%= score.game_id %></td>
-        <td><%= score.player_id %></td>
+        <td><%= controller.get_game_name(score.game_id) %></td>
+        <td><%= controller.get_player_nickname(score.player_id) %></td>
         <td><%= score.score %></td>
         <td><%= score.date %></td>
         <td><%= score.is_verified %></td>

@@ -7,8 +7,6 @@ class ScoresController < ApplicationController
     @scores = Score.all
   end
 
-
-
   # GET /scores/1
   # GET /scores/1.json
   def show
@@ -64,6 +62,14 @@ class ScoresController < ApplicationController
       format.html { redirect_to scores_url }
       format.json { head :no_content }
     end
+  end
+
+  def get_game_name(game_id)
+    Game.find_by_id(game_id).name
+  end
+
+  def get_player_nickname(player_id)
+    Player.find_by_id(player_id).nickname
   end
 
   private
