@@ -15,19 +15,16 @@ class ScoresController < ApplicationController
   # GET /scores/new
   def new
     @score = Score.new
-    populate_game_and_player_list
   end
 
   # GET /scores/1/edit
   def edit
-    populate_game_and_player_list
   end
 
   # POST /scores
   # POST /scores.json
   def create
     @score = Score.new(score_params)
-    populate_game_and_player_list
 
     respond_to do |format|
       if @score.save
@@ -64,14 +61,6 @@ class ScoresController < ApplicationController
     end
   end
 
-  def get_game_name(game_id)
-    Game.find_by_id(game_id).name
-  end
-
-  def get_player_nickname(player_id)
-    Player.find_by_id(player_id).nickname
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_score
@@ -82,10 +71,4 @@ class ScoresController < ApplicationController
     def score_params
       params.require(:score).permit(:game_id, :player_id, :score, :date, :is_verified)
     end
-
-    def populate_game_and_player_list
-      @list_of_games = Game.all
-      @list_of_players = Player.all
-    end
 end
-
