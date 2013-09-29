@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :player_id %><br>
-    <%= f.number_field :player_id %>
+    <%= f.collection_select :player_id, Player.all, :id, :nickname %>
   </div>
   <div class="field">
     <%= f.label :score %><br>
