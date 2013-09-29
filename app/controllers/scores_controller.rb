@@ -7,6 +7,8 @@ class ScoresController < ApplicationController
     @scores = Score.all
   end
 
+
+
   # GET /scores/1
   # GET /scores/1.json
   def show
@@ -15,16 +17,19 @@ class ScoresController < ApplicationController
   # GET /scores/new
   def new
     @score = Score.new
+    populate_game_and_player_list
   end
 
   # GET /scores/1/edit
   def edit
+    populate_game_and_player_list
   end
 
   # POST /scores
   # POST /scores.json
   def create
     @score = Score.new(score_params)
+    populate_game_and_player_list
 
     respond_to do |format|
       if @score.save
@@ -71,4 +76,10 @@ class ScoresController < ApplicationController
     def score_params
       params.require(:score).permit(:game_id, :player_id, :score, :date, :is_verified)
     end
+
+    def populate_game_and_player_list
+      @list_of_games = Game.all
+      @list_of_players = Player.all
+    end
 end
+
