@@ -1,5 +1,6 @@
 class ScoresController < ApplicationController
   before_action :set_score, only: [:show, :edit, :update, :destroy]
+  helper GamesHelper
 
   # GET /scores
   # GET /scores.json

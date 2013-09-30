@@ -17,7 +17,7 @@
   <tbody>
     <% @scores.each do |score| %>
       <tr>
-        <td><%= score.game_id %></td>
+        <td><%= score.game_id.name %></td>
         <td><%= score.player_id %></td>
         <td><%= score.score %></td>
         <td><%= score.date %></td>

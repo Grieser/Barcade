@@ -1,15 +1,20 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the GamesHelper. For example:
-#
-# describe GamesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 describe GamesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:game) do
+  	stub_model Game, :id => 1, :name => "game name"
+  end
+
+  it 'get_game_name returns name of the game when provided an id' do
+  	Game.stub(:find_by_id) {game}
+
+  	helper.get_game_name(1).should eq("game name")
+  end
+
+  it 'get_game_name returns empty string if game does not exist at provided id' do
+  	Game.stub(:find_by_id) {}
+
+  	helper.get_game_name(2).should eq("")
+  end
+
 end
