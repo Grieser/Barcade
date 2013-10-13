@@ -1,1 +1,1 @@
-json.extract! @game, :name, :year, :version, :publisher, :cabinet_type, :genre, :num_of_players, :created_at, :updated_at
+json.extract! @game, :name, :created_at, :updated_at

@@ -4,12 +4,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Year</th>
-      <th>Version</th>
-      <th>Publisher</th>
-      <th>Cabinet type</th>
-      <th>Genre</th>
-      <th>Num of players</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,12 +14,6 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.name %></td>
-        <td><%= game.year %></td>
-        <td><%= game.version %></td>
-        <td><%= game.publisher %></td>
-        <td><%= game.cabinet_type %></td>
-        <td><%= game.genre %></td>
-        <td><%= game.num_of_players %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

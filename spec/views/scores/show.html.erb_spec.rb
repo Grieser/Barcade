@@ -5,8 +5,7 @@ describe "scores/show" do
     @score = assign(:score, stub_model(Score,
       :game_id => 1,
       :player_id => 2,
-      :score => 3,
-      :is_verified => false
+      :score => 3
     ))
   end
 
@@ -16,6 +15,5 @@ describe "scores/show" do
     rendered.should match(/1/)
     rendered.should match(/2/)
     rendered.should match(/3/)
-    rendered.should match(/false/)
   end
 end

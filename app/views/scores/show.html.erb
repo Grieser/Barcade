@@ -15,15 +15,5 @@
   <%= @score.score %>
 </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @score.date %>
-</p>
-
-<p>
-  <strong>Is verified:</strong>
-  <%= @score.is_verified %>
-</p>
-
 <%= link_to 'Edit', edit_score_path(@score) %> |
 <%= link_to 'Back', scores_path %>

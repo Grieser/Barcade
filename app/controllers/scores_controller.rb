@@ -1,6 +1,5 @@
 class ScoresController < ApplicationController
   before_action :set_score, only: [:show, :edit, :update, :destroy]
-  helper GamesHelper
 
   # GET /scores
   # GET /scores.json
@@ -70,6 +69,6 @@ class ScoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def score_params
-      params.require(:score).permit(:game_id, :player_id, :score, :date, :is_verified)
+      params.require(:score).permit(:game_id, :player_id, :score)
     end
 end

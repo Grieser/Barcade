@@ -23,7 +23,7 @@ describe PlayersController do
   # This should return the minimal set of attributes required to create a valid
   # Player. As you add validations to Player, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "nickname" => "MyString" } }
+  let(:valid_attributes) { { "name" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,14 +85,14 @@ describe PlayersController do
       it "assigns a newly created but unsaved player as @player" do
         # Trigger the behavior that occurs when invalid params are submitted
         Player.any_instance.stub(:save).and_return(false)
-        post :create, {:player => { "nickname" => "invalid value" }}, valid_session
+        post :create, {:player => { "name" => "invalid value" }}, valid_session
         assigns(:player).should be_a_new(Player)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Player.any_instance.stub(:save).and_return(false)
-        post :create, {:player => { "nickname" => "invalid value" }}, valid_session
+        post :create, {:player => { "name" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -106,8 +106,8 @@ describe PlayersController do
         # specifies that the Player created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Player.any_instance.should_receive(:update).with({ "nickname" => "MyString" })
-        put :update, {:id => player.to_param, :player => { "nickname" => "MyString" }}, valid_session
+        Player.any_instance.should_receive(:update).with({ "name" => "MyString" })
+        put :update, {:id => player.to_param, :player => { "name" => "MyString" }}, valid_session
       end
 
       it "assigns the requested player as @player" do
@@ -128,7 +128,7 @@ describe PlayersController do
         player = Player.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Player.any_instance.stub(:save).and_return(false)
-        put :update, {:id => player.to_param, :player => { "nickname" => "invalid value" }}, valid_session
+        put :update, {:id => player.to_param, :player => { "name" => "invalid value" }}, valid_session
         assigns(:player).should eq(player)
       end
 
@@ -136,7 +136,7 @@ describe PlayersController do
         player = Player.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Player.any_instance.stub(:save).and_return(false)
-        put :update, {:id => player.to_param, :player => { "nickname" => "invalid value" }}, valid_session
+        put :update, {:id => player.to_param, :player => { "name" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

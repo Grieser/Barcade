@@ -5,35 +5,5 @@
   <%= @game.name %>
 </p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @game.year %>
-</p>
-
-<p>
-  <strong>Version:</strong>
-  <%= @game.version %>
-</p>
-
-<p>
-  <strong>Publisher:</strong>
-  <%= @game.publisher %>
-</p>
-
-<p>
-  <strong>Cabinet type:</strong>
-  <%= @game.cabinet_type %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @game.genre %>
-</p>
-
-<p>
-  <strong>Num of players:</strong>
-  <%= @game.num_of_players %>
-</p>
-
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

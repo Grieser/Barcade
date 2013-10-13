@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :game_id %><br>
-    <%= f.collection_select :game_id, [], :id, :name %>
+    <%= f.number_field :game_id %>
   </div>
   <div class="field">
     <%= f.label :player_id %><br>
@@ -22,14 +22,6 @@
   <div class="field">
     <%= f.label :score %><br>
     <%= f.number_field :score %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :is_verified %><br>
-    <%= f.check_box :is_verified %>
   </div>
   <div class="actions">
     <%= f.submit %>
