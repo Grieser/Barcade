@@ -1,4 +1,5 @@
 Barcade::Application.routes.draw do
+  get "static_pages/home"
   resources :scores
 
   resources :players
