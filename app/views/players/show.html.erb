@@ -3,6 +3,11 @@
 <p>
   <strong>Name:</strong>
   <%= @player.name %>
+  <p>
+	  <% @player.score.each do |game_score| %>
+	  	<%=Game.find_by_id(game_score.game_id).name %>: <%= game_score.score %><br>
+	  <% end %>
+  </p>
 </p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
